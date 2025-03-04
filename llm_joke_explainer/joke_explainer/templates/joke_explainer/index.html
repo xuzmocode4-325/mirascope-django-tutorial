@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block content%}
+    
+    <div id="container" class="
+    bg-gray-900 p-12 rounded-lg shadow 
+    shadow-black w-[80vw] text-gray-50">
+    <h3 id="title" class="opacity-90 tracking-wider text-2xl">
+    Try Not To Laugh 🥸
+    </h3>
+    <div>
+        <p id="joke" class="text-4xl text-center my-10">
+        // Joke goes here
+        </p>
+    </div>
+    <button id="jokeBtn" class="
+        hover:border-transparent hover:bg-gray-500 hover:text-white
+        border border-gray-100 p-3 rounded-md">
+        Next Joke
+    </button>
+    </div>
+    
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'joke_explainer/js/getJokes.js' %}"></script>
+{% endblock %}
