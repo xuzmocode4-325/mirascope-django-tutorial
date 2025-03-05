@@ -4,27 +4,44 @@
 {% block title %}{% endblock %}
 
 {% block content%}
-    
-    <div id="container" class="
+<div id="container" class="
     bg-gray-900 p-12 rounded-lg shadow 
-    shadow-black w-[80vw] text-gray-50">
-    <h3 id="title" class="opacity-90 tracking-wider text-2xl">
+    shadow-black w-[80vw] text-gray-50 max-h-1/2-screen overflow-scroll">
+    <h3 id="title" class="opacity-90 tracking-wider text-4xl text-center">
     Try Not To Laugh 🥸
     </h3>
     <div>
-        <p id="joke" class="text-4xl text-center my-10">
+        <p id="joke" class="text-2xl md:text-4xl text-center my-10">
         // Joke goes here
         </p>
     </div>
-    <button id="jokeBtn" class="
-        hover:border-transparent hover:bg-gray-500 hover:text-white
-        border border-gray-100 p-3 rounded-md">
-        Next Joke
-    </button>
-    </div>
+    <!--  -->
+    <div class="flex justify-center space-x-8">
+        <button id="nextJokeBtn" class="
+            hover:border-transparent hover:bg-gray-700 hover:text-white
+            border border-gray-100 p-3 rounded-md">
+            Next Joke
+        </button>
+        <button id="explainJokeBtn" class="
+            hover:border-transparent hover:bg-gray-700 hover:text-white
+            border border-gray-100 p-3 rounded-md">
+            Explain The Joke
+        </button>
+    </div>       
+</div>
+
+<div id="explanation-container" class="
+    bg-gray-700  p-12 mt-4 rounded-lg shadow shadow-black w-[80vw] text-gray-50 flex items-center justify-center">
+    <p id="explanation" class="text-lg opacity-90 tracking-widest text-center my-10">
+        {{ explanation }}
+    </p>
+</div>
     
 {% endblock %}
 
 {% block script %}
-    <script src="{% static 'joke_explainer/js/getJokes.js' %}"></script>
+    <script 
+        src="{% static 'joke_explainer/js/getJokes.js' %}"
+        data-url="{% url 'joke_explainer_index' %}">
+    </script>
 {% endblock %}
