@@ -67,6 +67,7 @@ async function explainJoke() {
             explanationDiv.innerHTML = result;
             explanationDiv.parentElement.classList.remove('hidden');
         }
+        
     } catch (error) {
         console.error("Error in explainJoke function: ", error);
         alert('An error occurred while explaining the joke.');
